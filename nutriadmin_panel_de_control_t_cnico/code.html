@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriSana Admin Dashboard</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dedad1",
+                    "surface-container-highest": "#e6e2d9",
+                    "surface-bright": "#fdf9f0",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#a9d1aa",
+                    "background": "#fdf9f0",
+                    "secondary-fixed": "#caecc6",
+                    "surface-container": "#f2ede4",
+                    "on-surface-variant": "#424841",
+                    "primary-fixed": "#c4edc5",
+                    "secondary-container": "#c7e9c3",
+                    "tertiary-fixed-dim": "#ffb597",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#4c6a4c",
+                    "surface-variant": "#e6e2d9",
+                    "secondary": "#486648",
+                    "tertiary-container": "#cf8667",
+                    "secondary-fixed-dim": "#aecfab",
+                    "surface-container-high": "#ece8df",
+                    "on-secondary-fixed": "#052109",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#6f371e",
+                    "primary-container": "#7ba17d",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f5f0e7",
+                    "on-secondary-fixed-variant": "#314d31",
+                    "tertiary-fixed": "#ffdbcd",
+                    "inverse-surface": "#32302a",
+                    "on-surface": "#1c1c16",
+                    "on-background": "#1c1c16",
+                    "tertiary": "#8c4e33",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#a9d1aa",
+                    "on-primary-fixed-variant": "#2c4e31",
+                    "primary": "#436747",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f7f3ea",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#14371b",
+                    "outline-variant": "#c2c8bf",
+                    "surface": "#fdf9f0",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-primary-fixed": "#002109",
+                    "surface-tint": "#436747",
+                    "outline": "#727970",
+                    "on-tertiary-container": "#53220a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "xl": "80px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "h3": ["Newsreader"],
+                    "h1": ["Newsreader"],
+                    "h2": ["Newsreader"],
+                    "button": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        /* Subtle custom scrollbar for data tables */
+        ::-webkit-scrollbar { height: 6px; width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: theme('colors.outline-variant'); border-radius: theme('borderRadius.full'); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row bg-background text-on-background font-body-md">
+<!-- SideNavBar (JSON Component mapped verbatim) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full flex-col py-8 px-4 space-y-2 z-50 bg-[#FDFCFB] dark:bg-stone-950 border-r border-stone-200 dark:border-stone-800 rounded-none w-64">
+<!-- Header -->
+<div class="mb-8 px-4 flex flex-col items-start">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="science">science</span>
+</div>
+<h2 class="text-xl font-black text-[#3D5A3D] dark:text-[#7BA17D]">NutriAdmin</h2>
+<p class="font-serif text-sm tracking-wide text-stone-600 dark:text-stone-400">Precision Nutrition</p>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 space-y-2">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-stone-100 dark:bg-stone-900 text-[#7BA17D] font-bold border-r-4 border-[#7BA17D] transform transition-transform active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" data-weight="fill">dashboard</span>
+<span class="font-serif text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#3D5A3D] hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors duration-200 transform transition-transform active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-serif text-sm tracking-wide">Food Databases</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#3D5A3D] hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors duration-200 transform transition-transform active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="rule">rule</span>
+<span class="font-serif text-sm tracking-wide">Macro Rules</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#3D5A3D] hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors duration-200 transform transition-transform active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-serif text-sm tracking-wide">Algorithms</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#3D5A3D] hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors duration-200 transform transition-transform active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-serif text-sm tracking-wide">User Logs</span>
+</a>
+</div>
+<!-- CTA -->
+<div class="mt-auto mb-6 px-4">
+<button class="w-full py-2 bg-primary text-on-primary rounded-lg font-button text-button shadow-sm hover:opacity-90 transition-opacity">
+                Generate API Report
+            </button>
+</div>
+<!-- Footer Navigation -->
+<div class="border-t border-stone-200 pt-4 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#3D5A3D] hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors duration-200 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-serif text-sm tracking-wide">Settings</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#3D5A3D] hover:bg-stone-50 dark:hover:bg-stone-900 transition-colors duration-200 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-serif text-sm tracking-wide">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full">
+<!-- TopAppBar (JSON Component mapped verbatim) -->
+<header class="flex justify-between items-center w-full px-6 h-16 sticky top-0 bg-white/80 backdrop-blur-md bg-[#FDFCFB] dark:bg-stone-950 docked full-width top-0 border-b z-40 border-stone-200/60 dark:border-stone-800 shadow-[0_4px_20px_-5px_rgba(61,90,61,0.08)]">
+<div class="flex items-center space-x-4">
+<!-- Mobile Menu Trigger (Conceptual) -->
+<button class="md:hidden p-2 text-stone-500 hover:bg-stone-50 rounded-full transition-all duration-200 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-2xl font-bold text-[#3D5A3D] dark:text-[#7BA17D]">NutriAdmin</span>
+</div>
+<!-- Center Search (Conceptual mapping based on "search_bar": "on_right") -->
+<div class="hidden md:flex flex-1 max-w-md mx-6">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-stone-50 border border-stone-200 rounded-full font-serif text-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#7BA17D]/20 focus:border-[#7BA17D] transition-all" placeholder="Search databases, users..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center space-x-2">
+<button class="p-2 text-stone-500 dark:text-stone-400 font-medium hover:bg-stone-50 dark:hover:bg-stone-900/50 transition-all duration-200 active:scale-95 cursor-pointer rounded-full flex items-center justify-center relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+</button>
+<button class="p-2 text-stone-500 dark:text-stone-400 font-medium hover:bg-stone-50 dark:hover:bg-stone-900/50 transition-all duration-200 active:scale-95 cursor-pointer rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+</button>
+<button class="p-1 ml-2 text-stone-500 dark:text-stone-400 font-medium hover:bg-stone-50 dark:hover:bg-stone-900/50 transition-all duration-200 active:scale-95 cursor-pointer rounded-full flex items-center justify-center border border-stone-200/60 overflow-hidden">
+<img alt="Admin Administrator" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3EBhzYEfccuQQFWo-N2_rVLQxmEgzglhADwYmuiRY4sj8N_U2L1XYOqerSFngP8NUZFAEcZ9MIZc3tsX5yYNZntoH5afe4a5udyFWqXNqEN-k1QomDajXVoTMXWG2lZivjdCUQ0kN10R76qXhv0h-izGgjy6CVtV_nP2dCfee8sn4_OLmwYT7YUWAduC_epHqNa3yCfqbBTYL8euG-ph4jSI6Al9sO7MXBpSQuWlrNnG4u7358_aw9vJ4fRqcver1peICCl_63qw"/>
+</button>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<main class="flex-1 p-md md:p-lg lg:p-xl space-y-lg max-w-container-max mx-auto w-full overflow-x-hidden">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-h1 text-h1 text-on-background mb-2">System Overview</h1>
+<p class="font-body-md text-body-md text-outline">Manage integrations, algorithmic rules, and dataset integrity.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-outline-variant text-on-surface rounded-lg font-button text-button hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export Logs
+                    </button>
+</div>
+</div>
+<!-- Top Bento Grid: Data Sources Summary -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- BEDCA Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container shadow-sm flex flex-col justify-between h-full relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="database">database</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">BEDCA</h3>
+<p class="font-label-caps text-label-caps text-outline uppercase">Primary Source</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                            Active
+                        </span>
+</div>
+<div class="relative z-10 mt-auto pt-4 border-t border-surface-container">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-outline">Last Sync</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">10 mins ago</span>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="font-body-md text-body-md text-outline">Records</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">12,450</span>
+</div>
+</div>
+</div>
+<!-- Open Food Facts Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container shadow-sm flex flex-col justify-between h-full relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary-container/10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="public">public</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Open Food Facts</h3>
+<p class="font-label-caps text-label-caps text-outline uppercase">Secondary Fallback</p>
+</div>
+</div>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1 border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-outline inline-block animate-pulse"></span>
+                            Syncing...
+                        </span>
+</div>
+<div class="relative z-10 mt-auto pt-4 border-t border-surface-container">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-outline">Last Sync</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">In Progress (45%)</span>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="font-body-md text-body-md text-outline">Records</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">~2.1M</span>
+</div>
+</div>
+</div>
+<!-- API Health Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container shadow-sm flex flex-col justify-between h-full relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="monitor_heart">monitor_heart</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">API Health</h3>
+<p class="font-label-caps text-label-caps text-outline uppercase">System Status</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                            Stable
+                        </span>
+</div>
+<div class="relative z-10 mt-auto pt-4 border-t border-surface-container">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-outline">Avg Response</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">124ms</span>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="font-body-md text-body-md text-outline">Error Rate</span>
+<span class="font-body-md text-body-md text-on-surface font-medium text-primary">0.02%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Section: Database Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container shadow-sm overflow-hidden flex flex-col">
+<div class="p-6 border-b border-surface-container flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-surface-bright">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Database Integrity Review</h2>
+<p class="font-body-md text-body-md text-outline">Recent entries requiring verification or conflict resolution.</p>
+</div>
+<div class="flex gap-2 w-full sm:w-auto">
+<div class="relative flex-1 sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface rounded-lg border border-outline-variant font-body-md text-body-md focus:outline-none focus:border-primary transition-colors" placeholder="Search entries..." type="text"/>
+</div>
+<button class="p-2 border border-outline-variant rounded-lg text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-container">
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider">Food Name</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider">Source</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider text-right">Calories</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider text-right">Protein</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider text-right">Carbs</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider text-right">Fat</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider text-center">Status</th>
+<th class="py-4 px-6 font-label-caps text-label-caps text-outline uppercase tracking-wider text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container bg-surface-container-lowest">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-6">
+<p class="font-body-md text-body-md text-on-surface font-medium">Aceite de Oliva Virgen Extra</p>
+<p class="font-label-caps text-label-caps text-outline">Category: Fats &amp; Oils</p>
+</td>
+<td class="py-4 px-6">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded text-xs font-semibold">BEDCA</span>
+</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">884 kcal</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">0.0g</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">0.0g</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">100.0g</td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center justify-center px-2 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-semibold">Verified</span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-6">
+<p class="font-body-md text-body-md text-on-surface font-medium">Lentils, Boiled (Generic)</p>
+<p class="font-label-caps text-label-caps text-outline">Category: Legumes</p>
+</td>
+<td class="py-4 px-6">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded text-xs font-semibold">OFF</span>
+</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">116 kcal</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">9.0g</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">20.1g</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface text-tertiary-container font-semibold">0.4g*</td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center justify-center px-2 py-1 bg-[#fff3cd] text-[#856404] rounded-full text-xs font-semibold border border-[#ffeeba]">Pending</span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-6">
+<p class="font-body-md text-body-md text-on-surface font-medium">Artisan Sourdough Bread</p>
+<p class="font-label-caps text-label-caps text-outline">Category: Bakery</p>
+</td>
+<td class="py-4 px-6">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded text-xs font-semibold">User Log</span>
+</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">289 kcal</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">11.8g</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">56.0g</td>
+<td class="py-4 px-6 text-right font-body-md text-body-md text-on-surface">1.8g</td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center justify-center px-2 py-1 bg-[#fff3cd] text-[#856404] rounded-full text-xs font-semibold border border-[#ffeeba]">Pending</span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-surface-container bg-surface-bright flex justify-center">
+<button class="text-primary font-button text-button hover:underline text-sm">View All 142 Pending Entries</button>
+</div>
+</div>
+<!-- Bottom Section: Algorithm Settings Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+<!-- Macro Matching Rules -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="tune">tune</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-surface">Macro Matching Rules</h2>
+</div>
+<p class="font-body-md text-body-md text-outline mb-6">Define global tolerance percentages for daily macro target achievement status.</p>
+<div class="space-y-6">
+<!-- Protein Tolerance -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<label class="font-button text-button text-on-surface">Protein Tolerance</label>
+<span class="font-label-caps text-label-caps text-primary px-2 py-1 bg-primary-container/20 rounded">+ / - 5%</span>
+</div>
+<div class="relative w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-primary w-[30%]"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-caps text-[10px] text-outline">
+<span>Strict (0%)</span>
+<span>Loose (20%)</span>
+</div>
+</div>
+<!-- Carbs Tolerance -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<label class="font-button text-button text-on-surface">Carbohydrate Tolerance</label>
+<span class="font-label-caps text-label-caps text-primary px-2 py-1 bg-primary-container/20 rounded">+ / - 10%</span>
+</div>
+<div class="relative w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-primary w-[50%]"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-caps text-[10px] text-outline">
+<span>Strict (0%)</span>
+<span>Loose (20%)</span>
+</div>
+</div>
+<!-- Fat Tolerance -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<label class="font-button text-button text-on-surface">Fat Tolerance</label>
+<span class="font-label-caps text-label-caps text-primary px-2 py-1 bg-primary-container/20 rounded">+ / - 5%</span>
+</div>
+<div class="relative w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full bg-primary w-[30%]"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-caps text-[10px] text-outline">
+<span>Strict (0%)</span>
+<span>Loose (20%)</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-surface-container flex justify-end">
+<button class="px-6 py-2 bg-surface-variant text-on-surface-variant rounded-lg font-button text-button hover:bg-outline-variant transition-colors">
+                            Save Tolerances
+                        </button>
+</div>
+</div>
+<!-- Eating Out Estimation Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="restaurant">restaurant</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-surface">Eating Out Estimator</h2>
+</div>
+<p class="font-body-md text-body-md text-outline mb-6">Adjust hidden fat and calorie multipliers applied to generic restaurant entries logged by users.</p>
+<div class="space-y-4">
+<!-- Category Row 1 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors border border-transparent hover:border-surface-container">
+<div class="flex items-center gap-4">
+<img alt="Burger" class="w-12 h-12 rounded-lg object-cover shadow-sm" data-alt="close up realistic macro shot of a gourmet beef burger with melted cheese and fresh lettuce on a wooden board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLbbtY0KqRvMVx6hrqSkZ0Tz8nOFoG89gdfC7mH010BhLnwjmteYMtnN0Bl1PpQSjPa6RRaTBKflfB0d82OZNw7tmMsAJLl2TEA70_nUWYOMhws12WdYysq9E7qW5vQMwPzlmZFsoArCxVZhQuBKr0ROs9qnC5SEA7WpIpndtLp4FJ1I_Uhp38qcAroc0Tlv8mVm0mgVDdA3HKzxquZq_BbBBh-LYRljKk1lS16CwFfkiDC2agDxCmN6wIjVgGL4WrKY7QUfxces4"/>
+<div>
+<h4 class="font-button text-button text-on-surface">Gourmet Burger</h4>
+<p class="font-label-caps text-[10px] text-outline uppercase mt-1">High Hidden Fat Risk</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<label class="font-label-caps text-xs text-outline hidden sm:block">Fat Multiplier</label>
+<input class="w-16 px-2 py-1 bg-surface-container-lowest border border-outline-variant rounded text-center font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none" step="0.1" type="number" value="1.4"/>
+<span class="text-outline">x</span>
+</div>
+</div>
+<!-- Category Row 2 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors border border-transparent hover:border-surface-container">
+<div class="flex items-center gap-4">
+<img alt="Salad" class="w-12 h-12 rounded-lg object-cover shadow-sm" data-alt="vibrant overhead shot of a mixed green salad in a ceramic bowl with heavy olive oil dressing glistening" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4qIXSjbSREZPFdDdIrlXa82cvx81t3AIijpZkNAWq4jpZADEmVNUHx9LiG2NPZN-8fUTEkdIqMTiOjLuBgheTA8KKov0cjpNqakFLoU7V9gJF2MHbeHi-7ZTtMRVMZ12V7THOXvRD00gOiHRzfNBmLxPbqRmRcdjRx3bgRgbf4ny1bbJc8XYUxCxppgN1YJUie_tr1TRxnmQXHr0aqXD3L_zrvHVv8Iyh5Uonmbcr1iWBy1FN5xt8nLxKU1TAg2eM9zOAP2TI00Q"/>
+<div>
+<h4 class="font-button text-button text-on-surface">Restaurant Salad (Dressed)</h4>
+<p class="font-label-caps text-[10px] text-outline uppercase mt-1">Med Hidden Fat Risk</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<label class="font-label-caps text-xs text-outline hidden sm:block">Fat Multiplier</label>
+<input class="w-16 px-2 py-1 bg-surface-container-lowest border border-outline-variant rounded text-center font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none" step="0.1" type="number" value="1.6"/>
+<span class="text-outline">x</span>
+</div>
+</div>
+<!-- Category Row 3 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors border border-transparent hover:border-surface-container">
+<div class="flex items-center gap-4">
+<img alt="Grilled Meat" class="w-12 h-12 rounded-lg object-cover shadow-sm" data-alt="close up of grilled chicken breast strips with grill marks and slight oily sheen on a white plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF5QVFqrDRs-AatkLUhzw2e1ov4R4-y7UmCXymCtIJIcOsRhgWJlYaMxDR_qFiblHwfHlb92TsbcfKsxv_JdIJs_2F3zqSUs6Nkavl98Kuu3LXTdkUyeW-Y8-LWRHpKwcuhgaerD9KUZk8VBcy7W3a8gmthzfIOOJCssROL9MpR97D4GkGr6YSEomrUPMMKONoJBfyeNaiWdNgXftGOJ8nQe0_8N80nnxXAi1-UWRecQaQsY_Cdo4i764GQmH8WZz7yDvlQ0HoYHk"/>
+<div>
+<h4 class="font-button text-button text-on-surface">Grilled Meats (Generic)</h4>
+<p class="font-label-caps text-[10px] text-outline uppercase mt-1">Low Hidden Fat Risk</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<label class="font-label-caps text-xs text-outline hidden sm:block">Fat Multiplier</label>
+<input class="w-16 px-2 py-1 bg-surface-container-lowest border border-outline-variant rounded text-center font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none" step="0.1" type="number" value="1.2"/>
+<span class="text-outline">x</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container">
+<button class="w-full py-2 border border-outline-variant text-on-surface rounded-lg font-button text-button hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                            Add Category Override
+                        </button>
+</div>
+</div>
+</div>
+<!-- Spacer for bottom breathing room -->
+<div class="h-xl"></div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cómo Funciona - NutriSana</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#052109",
+                      "surface-container-low": "#f7f3ea",
+                      "inverse-primary": "#a9d1aa",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#f2ede4",
+                      "surface-dim": "#dedad1",
+                      "on-tertiary-fixed-variant": "#6f371e",
+                      "tertiary": "#8c4e33",
+                      "inverse-on-surface": "#f5f0e7",
+                      "background": "#fdf9f0",
+                      "on-primary-fixed": "#002109",
+                      "secondary": "#486648",
+                      "primary-container": "#7ba17d",
+                      "tertiary-fixed": "#ffdbcd",
+                      "outline": "#727970",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#ece8df",
+                      "primary-fixed-dim": "#a9d1aa",
+                      "secondary-fixed-dim": "#aecfab",
+                      "on-primary-fixed-variant": "#2c4e31",
+                      "surface-variant": "#e6e2d9",
+                      "secondary-fixed": "#caecc6",
+                      "on-secondary-container": "#4c6a4c",
+                      "surface-bright": "#fdf9f0",
+                      "on-primary-container": "#14371b",
+                      "surface-container-highest": "#e6e2d9",
+                      "on-tertiary": "#ffffff",
+                      "inverse-surface": "#32302a",
+                      "on-tertiary-container": "#53220a",
+                      "primary": "#436747",
+                      "on-secondary-fixed-variant": "#314d31",
+                      "on-error": "#ffffff",
+                      "on-background": "#1c1c16",
+                      "on-surface": "#1c1c16",
+                      "tertiary-container": "#cf8667",
+                      "primary-fixed": "#c4edc5",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-surface-variant": "#424841",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#436747",
+                      "outline-variant": "#c2c8bf",
+                      "secondary-container": "#c7e9c3",
+                      "on-error-container": "#93000a",
+                      "surface": "#fdf9f0",
+                      "tertiary-fixed-dim": "#ffb597"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max": "1200px",
+                      "xl": "80px",
+                      "lg": "48px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "md": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "h1": [
+                              "Newsreader"
+                      ],
+                      "button": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "h3": [
+                              "Newsreader"
+                      ],
+                      "h2": [
+                              "Newsreader"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "button": [
+                              "16px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h2": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background antialiased pt-[88px]">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#3D5A3D]/10 shadow-sm shadow-[#3D5A3D]/5">
+<div class="text-2xl font-bold text-[#3D5A3D] font-['Newsreader']">
+            NutriSana
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Newsreader'] font-semibold text-lg text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors" href="#">Plan Diario</a>
+<a class="font-['Newsreader'] font-semibold text-lg text-[#7BA17D] border-b-2 border-[#7BA17D] pb-1" href="#">Cómo Funciona</a>
+<a class="font-['Newsreader'] font-semibold text-lg text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors" href="#">Precios</a>
+<a class="font-['Newsreader'] font-semibold text-lg text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors" href="#">Recursos</a>
+</div>
+<button class="bg-tertiary-container text-on-tertiary px-6 py-3 rounded-full font-button text-button hover:opacity-90 transition-opacity active:scale-95 duration-200">
+            Prueba Gratis
+        </button>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+<!-- Hero Section -->
+<section class="text-center mb-xl">
+<h1 class="font-h1 text-h1 text-primary mb-md">La ciencia detrás de tu bienestar</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-lg">
+                NutriSana no es solo una dieta, es un ecosistema inteligente que aprende de ti. Descubre cómo nuestra tecnología adapta la nutrición mediterránea a tu biología única.
+            </p>
+</section>
+<!-- The 8-Area Interview (Wizard Layout) -->
+<section class="bg-surface-container-low rounded-xl p-lg mb-xl shadow-sm border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-container via-tertiary-container to-primary-container opacity-50"></div>
+<div class="grid md:grid-cols-2 gap-lg items-center">
+<div>
+<h2 class="font-h2 text-h2 text-primary mb-sm">1. La Entrevista Integral</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                        Comenzamos con una evaluación profunda de 8 dimensiones clave de tu salud, estilo de vida y preferencias. Este es el cimiento de tu plan personalizado.
+                    </p>
+<!-- Horizontal Step Indicator (Simplified for display) -->
+<div class="flex items-center gap-2 mb-md overflow-x-auto pb-4">
+<div class="flex flex-col items-center gap-2 min-w-[60px]">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-button text-sm">1</div>
+<span class="font-label-caps text-label-caps text-primary text-center">Biológico</span>
+</div>
+<div class="w-8 h-[2px] bg-primary-container"></div>
+<div class="flex flex-col items-center gap-2 min-w-[60px]">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-button text-sm">2</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant text-center">Hábitos</span>
+</div>
+<div class="w-8 h-[2px] bg-surface-variant"></div>
+<div class="flex flex-col items-center gap-2 min-w-[60px]">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-button text-sm">3</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant text-center">Metas</span>
+</div>
+<div class="w-8 h-[2px] bg-surface-variant opacity-50 border-dashed border-t-2 border-surface-variant bg-transparent"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant whitespace-nowrap">5 áreas más...</span>
+</div>
+<button class="bg-tertiary-container text-on-tertiary px-8 py-4 rounded-full font-button text-button hover:opacity-90 transition-opacity w-full md:w-auto shadow-md">
+                        Empezar Entrevista
+                    </button>
+</div>
+<!-- Mockup Form -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-lg border border-outline-variant/30 relative">
+<!-- Subtle decorative element -->
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-container/20 rounded-full blur-2xl"></div>
+<div class="flex justify-between items-center mb-md border-b border-outline-variant/20 pb-sm">
+<span class="font-label-caps text-label-caps text-primary">Paso 1 de 8: Perfil Biológico</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">health_and_safety</span>
+</div>
+<div class="space-y-sm mb-md">
+<label class="block">
+<span class="font-body-md text-body-md text-on-surface block mb-xs">¿Tienes alguna restricción alimentaria o alergia diagnosticada?</span>
+<input class="w-full bg-surface-container-lowest border border-outline/20 rounded-lg px-4 py-3 font-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" placeholder="Ej. Intolerancia al gluten, alergia a nueces..." type="text"/>
+</label>
+</div>
+<div class="space-y-sm mb-md">
+<span class="font-body-md text-body-md text-on-surface block mb-xs">Nivel de actividad física predominante:</span>
+<div class="grid grid-cols-2 gap-2">
+<div class="border border-primary-container bg-primary-container/10 rounded-lg p-3 text-center cursor-pointer transition-colors">
+<span class="font-label-caps text-label-caps text-primary">Sedentario</span>
+</div>
+<div class="border border-outline/20 rounded-lg p-3 text-center cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Moderado</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end mt-sm">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-button text-button hover:opacity-90 transition-opacity">
+                            Siguiente
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Algorithm & Recalibration Section -->
+<section class="mb-xl">
+<div class="text-center mb-lg">
+<h2 class="font-h2 text-h2 text-primary mb-sm">2. Recalibración Inteligente</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                    Tu cuerpo cambia, y tu plan también debería hacerlo. Nuestro algoritmo analiza tu progreso semanalmente y ajusta los macronutrientes automáticamente.
+                </p>
+</div>
+<div class="grid md:grid-cols-3 gap-md">
+<!-- Bento Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-outline-variant/20 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Ajuste Dinámico</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Si reportas fatiga constante, el sistema incrementa sutilmente los carbohidratos complejos de absorción lenta.
+                    </p>
+</div>
+<!-- Bento Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-outline-variant/20 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Seguimiento Visual</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Gráficos claros que conectan tus métricas de energía y peso con los ajustes nutricionales realizados.
+                    </p>
+</div>
+<!-- Bento Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-outline-variant/20 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Variedad Asegurada</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        El algoritmo rota ingredientes estacionales de la dieta mediterránea para evitar la monotonía sin alterar los macros.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-primary text-on-primary rounded-xl p-xl text-center shadow-lg relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&amp;w=2000&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay" data-alt="close up of fresh mediterranean ingredients like olive oil, tomatoes, and basil on a rustic wooden table with soft natural light"></div>
+<div class="relative z-10">
+<h2 class="font-h2 text-h2 mb-sm">¿Listo para una nutrición que te entiende?</h2>
+<p class="font-body-lg text-body-lg opacity-90 max-w-2xl mx-auto mb-lg">Únete a NutriSana y comienza tu transformación guiada por la ciencia y el sabor.</p>
+<button class="bg-tertiary-container text-on-tertiary px-8 py-4 rounded-full font-button text-button hover:bg-tertiary-fixed-dim transition-colors shadow-lg">
+                    Empezar Entrevista
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#FAF7F2] border-t border-[#3D5A3D]/10">
+<div class="font-['Newsreader'] font-bold text-[#3D5A3D] text-xl">
+            NutriSana
+        </div>
+<div class="font-sans text-sm tracking-wide text-[#3D5A3D]">
+            © 2024 NutriSana. Nutrición mediterránea con precisión científica.
+        </div>
+<div class="flex gap-6">
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Aviso Legal</a>
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Privacidad</a>
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Cookies</a>
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Contacto</a>
+</div>
+</footer>
+</body></html>

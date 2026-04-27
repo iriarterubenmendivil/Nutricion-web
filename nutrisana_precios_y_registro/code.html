@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriSana - Precios y Registro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#052109",
+                    "surface-container-low": "#f7f3ea",
+                    "inverse-primary": "#a9d1aa",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f2ede4",
+                    "surface-dim": "#dedad1",
+                    "on-tertiary-fixed-variant": "#6f371e",
+                    "tertiary": "#8c4e33",
+                    "inverse-on-surface": "#f5f0e7",
+                    "background": "#fdf9f0",
+                    "on-primary-fixed": "#002109",
+                    "secondary": "#486648",
+                    "primary-container": "#7ba17d",
+                    "tertiary-fixed": "#ffdbcd",
+                    "outline": "#727970",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#ece8df",
+                    "primary-fixed-dim": "#a9d1aa",
+                    "secondary-fixed-dim": "#aecfab",
+                    "on-primary-fixed-variant": "#2c4e31",
+                    "surface-variant": "#e6e2d9",
+                    "secondary-fixed": "#caecc6",
+                    "on-secondary-container": "#4c6a4c",
+                    "surface-bright": "#fdf9f0",
+                    "on-primary-container": "#14371b",
+                    "surface-container-highest": "#e6e2d9",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#32302a",
+                    "on-tertiary-container": "#53220a",
+                    "primary": "#436747",
+                    "on-secondary-fixed-variant": "#314d31",
+                    "on-error": "#ffffff",
+                    "on-background": "#1c1c16",
+                    "on-surface": "#1c1c16",
+                    "tertiary-container": "#cf8667",
+                    "primary-fixed": "#c4edc5",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-surface-variant": "#424841",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#436747",
+                    "outline-variant": "#c2c8bf",
+                    "secondary-container": "#c7e9c3",
+                    "on-error-container": "#93000a",
+                    "surface": "#fdf9f0",
+                    "tertiary-fixed-dim": "#ffb597"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "xl": "80px",
+                    "lg": "48px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "h1": ["Newsreader"],
+                    "button": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "h3": ["Newsreader"],
+                    "h2": ["Newsreader"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                    "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                    "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                    "h3": ["24px", { "lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500" }],
+                    "h2": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Ambient tonal layer setup */
+        body {
+            background-color: theme('colors.background');
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(61, 90, 61, 0.08);
+        }
+        .ambient-shadow:hover {
+            box-shadow: 0 20px 40px -15px rgba(61, 90, 61, 0.12);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- JSON Injected: TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#3D5A3D]/10 shadow-sm shadow-[#3D5A3D]/5">
+<div class="text-2xl font-bold text-[#3D5A3D] dark:text-[#7BA17D] font-['Newsreader']">
+            NutriSana
+        </div>
+<!-- Desktop Navigation Links -->
+<ul class="hidden md:flex items-center gap-8 font-['Newsreader'] font-semibold text-lg">
+<li class="text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200 cursor-pointer px-2 py-1 rounded">Plan Diario</li>
+<li class="text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200 cursor-pointer px-2 py-1 rounded">Cómo Funciona</li>
+<li class="text-[#7BA17D] border-b-2 border-[#7BA17D] pb-1 hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200 cursor-pointer px-2">Precios</li>
+<li class="text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200 cursor-pointer px-2 py-1 rounded">Recursos</li>
+</ul>
+<div class="hidden md:block">
+<button class="bg-[#3D5A3D] text-[#FAF7F2] px-6 py-2 rounded-full font-semibold hover:bg-[#7BA17D] transition-colors active:scale-95 duration-200">
+                Prueba Gratis
+            </button>
+</div>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden text-[#3D5A3D]">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-xl px-gutter w-full max-w-container-max mx-auto flex flex-col items-center">
+<header class="text-center max-w-2xl mb-lg">
+<h1 class="font-h1 text-h1 text-on-background mb-base">Comienza tu transformación</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Nutrición mediterránea con precisión científica, diseñada para tu estilo de vida.</p>
+</header>
+<!-- Bento Grid Layout for Pricing & Sign-up -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg w-full items-start">
+<!-- Pricing Card (Prominent) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-lg ambient-shadow transition-all duration-300 border border-outline-variant/30 flex flex-col h-full relative overflow-hidden">
+<!-- Decorative subtle gradient -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+<div class="relative z-10 flex-grow">
+<div class="inline-flex items-center gap-2 bg-tertiary-container/20 text-tertiary border border-tertiary-container/30 px-sm py-xs rounded-full mb-md">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">7 días de prueba gratis</span>
+</div>
+<h2 class="font-h2 text-h2 text-on-surface mb-xs">Plan NutriSana</h2>
+<div class="flex items-baseline gap-xs mb-lg border-b border-surface-variant pb-md">
+<span class="font-h1 text-h1 text-primary">9.99€</span>
+<span class="font-body-md text-on-surface-variant">/mes</span>
+</div>
+<ul class="flex flex-col gap-sm mb-lg">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Plan de comidas 100% personalizado según tus objetivos</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Acceso ilimitado a +500 recetas mediterráneas curadas</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Generación automática de lista de la compra semanal</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Seguimiento de progreso y ajustes macro-nutricionales</span>
+</li>
+</ul>
+</div>
+<div class="mt-auto pt-md text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Cancela en cualquier momento. Sin compromisos.</p>
+</div>
+</div>
+<!-- Sign-up Form Area -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-lg ambient-shadow transition-all duration-300 border border-outline-variant/30 flex flex-col h-full">
+<h3 class="font-h3 text-h3 text-on-surface mb-base">Crea tu cuenta</h3>
+<p class="font-body-md text-on-surface-variant mb-lg">Únete a miles de personas que ya disfrutan de un bienestar luminoso.</p>
+<form class="flex flex-col gap-md flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant ml-xs" for="firstName">Nombre</label>
+<input class="bg-surface border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 w-full" id="firstName" placeholder="Ej. María" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant ml-xs" for="lastName">Apellidos</label>
+<input class="bg-surface border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 w-full" id="lastName" placeholder="Ej. García" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant ml-xs" for="email">Correo Electrónico</label>
+<input class="bg-surface border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 w-full" id="email" placeholder="maria@ejemplo.com" type="email"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant ml-xs" for="password">Contraseña</label>
+<input class="bg-surface border border-outline-variant/50 text-on-surface rounded-lg px-md py-sm font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 w-full" id="password" placeholder="Mínimo 8 caracteres" type="password"/>
+</div>
+<div class="mt-auto pt-md flex flex-col gap-md">
+<!-- Coral CTA Button -->
+<button class="w-full bg-tertiary-container text-on-tertiary-container hover:bg-tertiary hover:text-on-tertiary font-button text-button py-sm px-md rounded-lg transition-colors shadow-sm flex items-center justify-center gap-2" type="button">
+                            Comenzar mi prueba gratis
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<p class="font-label-caps text-label-caps text-on-surface-variant text-center max-w-sm mx-auto">
+                            Al hacer clic en "Comenzar", aceptas nuestros <a class="text-primary underline hover:text-primary-fixed-dim" href="#">Términos de Servicio</a> y la <a class="text-primary underline hover:text-primary-fixed-dim" href="#">Política de Privacidad</a>.
+                        </p>
+</div>
+</form>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="mt-xl w-full flex flex-col items-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md tracking-widest text-center">Respaldado por la ciencia, protegido con seguridad</p>
+<div class="flex flex-wrap justify-center items-center gap-xl opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-xs text-on-surface">
+<span class="material-symbols-outlined text-3xl">lock</span>
+<span class="font-h3 text-h3 text-lg leading-tight">Pago seguro<br/><span class="text-sm font-body-md">con Stripe</span></span>
+</div>
+<div class="hidden md:block w-px h-8 bg-outline-variant"></div>
+<div class="flex items-center gap-xs text-on-surface">
+<span class="material-symbols-outlined text-3xl">verified</span>
+<span class="font-h3 text-h3 text-lg leading-tight">Nutricionistas<br/><span class="text-sm font-body-md">Colegiados</span></span>
+</div>
+<div class="hidden md:block w-px h-8 bg-outline-variant"></div>
+<div class="flex items-center gap-xs text-on-surface">
+<span class="material-symbols-outlined text-3xl">encrypted</span>
+<span class="font-h3 text-h3 text-lg leading-tight">Privacidad<br/><span class="text-sm font-body-md">Garantizada</span></span>
+</div>
+</div>
+</div>
+</main>
+<!-- JSON Injected: Footer -->
+<footer class="w-full border-t border-[#3D5A3D]/10 bg-[#FAF7F2] dark:bg-stone-900 mt-auto">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-container-max mx-auto">
+<div class="font-['Newsreader'] font-bold text-[#3D5A3D] text-xl">
+                NutriSana
+            </div>
+<ul class="flex flex-wrap justify-center gap-6 font-sans text-sm tracking-wide">
+<li class="text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300 cursor-pointer">Aviso Legal</li>
+<li class="text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300 cursor-pointer">Privacidad</li>
+<li class="text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300 cursor-pointer">Cookies</li>
+<li class="text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300 cursor-pointer">Contacto</li>
+</ul>
+<div class="text-[#3D5A3D]/60 font-sans text-sm tracking-wide text-center md:text-right">
+                © 2024 NutriSana. Nutrición mediterránea con precisión científica.
+            </div>
+</div>
+</footer>
+</body></html>

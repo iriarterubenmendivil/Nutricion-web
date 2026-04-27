@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recursos y Blog - NutriSana</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#052109",
+                      "surface-container-low": "#f7f3ea",
+                      "inverse-primary": "#a9d1aa",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#f2ede4",
+                      "surface-dim": "#dedad1",
+                      "on-tertiary-fixed-variant": "#6f371e",
+                      "tertiary": "#8c4e33",
+                      "inverse-on-surface": "#f5f0e7",
+                      "background": "#fdf9f0",
+                      "on-primary-fixed": "#002109",
+                      "secondary": "#486648",
+                      "primary-container": "#7ba17d",
+                      "tertiary-fixed": "#ffdbcd",
+                      "outline": "#727970",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#ece8df",
+                      "primary-fixed-dim": "#a9d1aa",
+                      "secondary-fixed-dim": "#aecfab",
+                      "on-primary-fixed-variant": "#2c4e31",
+                      "surface-variant": "#e6e2d9",
+                      "secondary-fixed": "#caecc6",
+                      "on-secondary-container": "#4c6a4c",
+                      "surface-bright": "#fdf9f0",
+                      "on-primary-container": "#14371b",
+                      "surface-container-highest": "#e6e2d9",
+                      "on-tertiary": "#ffffff",
+                      "inverse-surface": "#32302a",
+                      "on-tertiary-container": "#53220a",
+                      "primary": "#436747",
+                      "on-secondary-fixed-variant": "#314d31",
+                      "on-error": "#ffffff",
+                      "on-background": "#1c1c16",
+                      "on-surface": "#1c1c16",
+                      "tertiary-container": "#cf8667",
+                      "primary-fixed": "#c4edc5",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-surface-variant": "#424841",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#436747",
+                      "outline-variant": "#c2c8bf",
+                      "secondary-container": "#c7e9c3",
+                      "on-error-container": "#93000a",
+                      "surface": "#fdf9f0",
+                      "tertiary-fixed-dim": "#ffb597"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max": "1200px",
+                      "xl": "80px",
+                      "lg": "48px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "md": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "h1": [
+                              "Newsreader"
+                      ],
+                      "button": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "h3": [
+                              "Newsreader"
+                      ],
+                      "h2": [
+                              "Newsreader"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "button": [
+                              "16px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h2": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-[72px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#3D5A3D]/10 shadow-sm shadow-[#3D5A3D]/5">
+<div class="text-2xl font-bold text-[#3D5A3D] dark:text-[#7BA17D] font-['Newsreader']">
+            NutriSana
+        </div>
+<nav class="hidden md:flex gap-8">
+<a class="font-['Newsreader'] font-semibold text-lg text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200" href="#">Plan Diario</a>
+<a class="font-['Newsreader'] font-semibold text-lg text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200" href="#">Cómo Funciona</a>
+<a class="font-['Newsreader'] font-semibold text-lg text-[#3D5A3D]/70 hover:text-[#3D5A3D] transition-colors hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200" href="#">Precios</a>
+<a class="font-['Newsreader'] font-semibold text-lg text-[#7BA17D] border-b-2 border-[#7BA17D] pb-1 hover:bg-[#7BA17D]/5 transition-all active:scale-95 duration-200" href="#">Recursos</a>
+</nav>
+<button class="font-button text-button bg-[#E89B7B] text-surface-container-lowest px-6 py-2 rounded-full hover:shadow-md transition-all">
+            Prueba Gratis
+        </button>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-gutter md:px-md pb-xl">
+<!-- Hero Section -->
+<section class="py-xl text-center">
+<h1 class="font-h1 text-h1 text-on-surface mb-sm">Recursos para tu Bienestar</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Explora nuestras herramientas, artículos y calculadoras diseñadas para apoyarte en tu viaje hacia una nutrición consciente y equilibrada.</p>
+</section>
+<!-- Calculators Section (Bento Grid) -->
+<section class="mb-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Calculator Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calculate</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Calculadora de Calorías</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Descubre tu requerimiento calórico diario basado en tu estilo de vida y objetivos.</p>
+<button class="w-full font-button text-button py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors">Calcular ahora</button>
+</div>
+<!-- Calculator Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">monitor_weight</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface">Índice de Masa Corporal</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Evalúa tu estado nutricional general de forma rápida y sencilla.</p>
+<button class="w-full font-button text-button py-3 rounded-lg border border-tertiary text-tertiary hover:bg-tertiary hover:text-on-tertiary transition-colors">Evaluar IMC</button>
+</div>
+<!-- Calculator Card 3 -->
+<div class="bg-primary rounded-xl p-6 shadow-sm text-on-primary hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full relative overflow-hidden">
+<div class="absolute -right-10 -top-10 opacity-10">
+<span class="material-symbols-outlined text-[120px]">psychology</span>
+</div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-on-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-primary">Quiz Nutricional</h3>
+</div>
+<p class="font-body-md text-body-md text-on-primary/90 mb-6 flex-grow">Descubre qué estilo de alimentación mediterránea se adapta mejor a ti.</p>
+<button class="w-full font-button text-button py-3 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface transition-colors">Comenzar Quiz</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Search and Filter Bar -->
+<section class="mb-lg flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/50 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Buscar artículos..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto no-scrollbar">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps">Todos</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-caps text-label-caps transition-colors">Pérdida de Grasa</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-caps text-label-caps transition-colors">Recetas</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-caps text-label-caps transition-colors">Mitos</button>
+</div>
+</section>
+<!-- Articles Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Article 1 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Plato saludable" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up of a healthy vibrant salad with avocado, cherry tomatoes, and quinoa on a rustic ceramic plate with natural side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt37pNDpljRV5VmUPdsfcDfSc0ETYA77F3Db9wH2_aw7n3osCSikE2E31rX3pnPhWP5QQXqqtpXRvb7jOI16SE4uKwJ1V3mMrPYerW1AWcfcQGUNUG3DJA7mVA5LriQNL_iGkD6XPgMm6sE4qZppfz46AyBfrd1ut2lRsticE5W3g989ops17dRsskgl5La_b7pVYmqXDqZcRczVMlEprHsLHvehUzvy6a8wMhFp5FEgrDq63h1ImjSu7AHcYsiXoA0XZl72kK1Rk"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full font-label-caps text-label-caps text-primary">Recetas</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">Ensalada Mediterránea: El bol perfecto para tus almuerzos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow line-clamp-3">Aprende a construir una ensalada nutricionalmente completa, saciante y llena de sabor con ingredientes frescos de la dieta mediterránea.</p>
+<div class="flex items-center text-outline text-sm gap-4 mt-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 5 min read</span>
+</div>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Ejercicio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up of hands adjusting a kettlebell in a bright, modern fitness studio with soft morning sunlight streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzF5tgGUdciUBgd1jU6Yp_dNkZVhXQ7sL5cuDSaJ3fhe0X6dLIHmIsefZ9e8hvAKLlOrhN3DWvvBwO3dfB20TVVIrlf7_o8EiNCC-iWU4s0ttI-h7Osni_PtG3I21T-Z7VCgBBU6aWICoum69YH94PcpJ4mBIZOaAZ0hiBL2_pR5aVKdZrMj6Y9_BhjOZSOXU8CWqDnjwX2vk0AfZodsSTsjr2bI37YuXdHFLj1BEN79n9JHYZ-FPblOMvQDBZ7ykXO4OA_Q4Sk6A"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full font-label-caps text-label-caps text-tertiary">Pérdida de Grasa</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">La verdad sobre el cardio y la pérdida de grasa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow line-clamp-3">Desmontamos el mito de que necesitas horas interminables en la cinta para perder peso. Descubre el enfoque respaldado por la ciencia.</p>
+<div class="flex items-center text-outline text-sm gap-4 mt-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 8 min read</span>
+</div>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Ingredientes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up of fresh garlic bulbs, rosemary sprigs, and a bottle of high quality olive oil on a wooden cutting board with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaPJv_U2Weyp08M15IJ-Ru4hz2SrwW1IkLCk1Upwq0MBnoh3zNXnbfMi8Y5Tc5m6ubQlWJe2d3sj08vYobdsAkTZ2oF9oatZ4rjw_XopRTx5K5XMm3uNQrq9Se7vpsm_McCj8YdutteC6Fg9_C0tjBPin2CmdopZNiidV8yxX4G8RzFj3DPrstdNpf2V21djQIS_mtyHlw7igLhEh4537VXuwj7duwoYRGBegBZ7TzM0LMNWodbAji4b-becOsigCwVq_bwP9pzdA"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full font-label-caps text-label-caps text-secondary">Mitos</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">¿Son realmente malos los carbohidratos por la noche?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow line-clamp-3">Analizamos la evidencia científica detrás de una de las reglas de nutrición más populares y por qué deberías dejar de temerle a la cena.</p>
+<div class="flex items-center text-outline text-sm gap-4 mt-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 6 min read</span>
+</div>
+</div>
+</article>
+<!-- Article 4 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Bowl de desayuno" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up of a nutritious oatmeal bowl topped with fresh berries, chia seeds, and a drizzle of honey on a light marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTJV7a-N1smq-yqjjAxUk5afxmFFzeodGEbjF1sVTKdgYlHQVrIEzauxyVIwA4lcKwLKT5H1qFqtw8f6m5z4ManYsIXSAhffvvDhqCZbcAAkazMa8Fn5dsbNrZbxVBxT9RXlyK4uEBf5ukmm_VNQPAsl9nunyIFB1wXshADDUHSdBHs6E_nFIrt-IYffxNx6YddNWVxbLtuzGh13IxPSb-bv8Imq1MR2iPnt2z8wvwi6ILfZeoo3uhY8Y2M0Wz55JF0R0enPChC5s"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full font-label-caps text-label-caps text-primary">Recetas</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">Desayunos rápidos y altos en proteína</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow line-clamp-3">5 ideas de desayunos que te mantendrán saciado toda la mañana y que puedes preparar en menos de 10 minutos.</p>
+<div class="flex items-center text-outline text-sm gap-4 mt-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 4 min read</span>
+</div>
+</div>
+</article>
+<!-- Article 5 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Báscula" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up view of a sleek modern digital bathroom scale on a light wood floor with soft morning light illuminating the numbers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7obIuCtVhiVblwqSlqSi6Ks0s6xyqTH-cHLs0ZQUSZesFA3cjWl0E4ZMjtbHxyV37k2lYrcTj23re5zij8B9iLLReFcNwhY-_jQnzVA1z08YyanL2rlqxHzi6HCbV-843DC-CPkoU61Pt17goLX8vUenBZNq4rmosNmx34fMcfYbcKlRki3fepLeUU1D0ERzrkkn0edfcQ9oheVoUOecVTYlc787dMZb5KWKghRwu4dZ54ngH5z6E_2MaPGwMqvJj2g7xUsKFCog"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full font-label-caps text-label-caps text-tertiary">Pérdida de Grasa</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">Por qué la báscula miente (y qué medir en su lugar)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow line-clamp-3">El peso total no cuenta toda la historia. Entiende la diferencia entre pérdida de peso y pérdida de grasa para un progreso real.</p>
+<div class="flex items-center text-outline text-sm gap-4 mt-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 7 min read</span>
+</div>
+</div>
+</article>
+<!-- Article 6 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Mujer bebiendo agua" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up portrait of a relaxed young woman holding a glass of water with lemon in a bright airy kitchen, soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIgs6JDhRBje18wnuWHKci2cM4QtSlPIhyODZfQDaKSadUHGlq__0OW5J9-tRtB2ej5C8gzHyqbaMH5GBRZh3nqQ27qnYEQrJTZfs2tKKHAim10lUNjVmu5w3K-1fWR8phoH8X8oxUdnbxoGCDCCedrdhqnqvGIMY9ArbkpyYhPCtko0-T0w8fktFI1RsCt_RChBeusI-0-YR83e6Iul5c7btOCn7sEhI5Ng1nvX0A0eA-j9QGyjYhduiND4f6OM614DpxDtyoiqI"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full font-label-caps text-label-caps text-secondary">Mitos</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-h3 text-h3 text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">El mito del metabolismo dañado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow line-clamp-3">¿Has arruinado tu metabolismo por hacer tantas dietas? Exploramos la ciencia detrás de la adaptación metabólica.</p>
+<div class="flex items-center text-outline text-sm gap-4 mt-auto">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 9 min read</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Pagination -->
+<div class="flex justify-center mt-12 gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-button">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors font-button">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors font-button">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-outline-variant">...</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#FAF7F2] dark:bg-stone-900 border-t border-[#3D5A3D]/10">
+<div class="font-['Newsreader'] font-bold text-[#3D5A3D]">
+            NutriSana
+        </div>
+<p class="font-sans text-sm tracking-wide text-[#3D5A3D] dark:text-[#7BA17D]">
+            © 2024 NutriSana. Nutrición mediterránea con precisión científica.
+        </p>
+<nav class="flex gap-6">
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Aviso Legal</a>
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Privacidad</a>
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Cookies</a>
+<a class="font-sans text-sm tracking-wide text-[#3D5A3D]/60 hover:text-[#E89B7B] transition-colors transition-opacity duration-300" href="#">Contacto</a>
+</nav>
+</footer>
+</body></html>
