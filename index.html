@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriSana - Tu Nutricionista Digital Personalizado</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#c7e9c3",
+                        "on-background": "#1c1c16",
+                        "on-secondary-fixed-variant": "#314d31",
+                        "surface-variant": "#e6e2d9",
+                        "tertiary-fixed-dim": "#ffb597",
+                        "outline-variant": "#c2c8bf",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dedad1",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f2ede4",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#8c4e33",
+                        "surface-container-low": "#f7f3ea",
+                        "on-tertiary-fixed": "#360f00",
+                        "inverse-surface": "#32302a",
+                        "on-secondary-container": "#4c6a4c",
+                        "on-primary-container": "#14371b",
+                        "on-primary-fixed-variant": "#2c4e31",
+                        "surface": "#fdf9f0",
+                        "primary-container": "#7ba17d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#c4edc5",
+                        "primary": "#436747",
+                        "surface-tint": "#436747",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ece8df",
+                        "on-surface": "#1c1c16",
+                        "secondary-fixed-dim": "#aecfab",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffdbcd",
+                        "primary-fixed-dim": "#a9d1aa",
+                        "on-tertiary-container": "#53220a",
+                        "inverse-on-surface": "#f5f0e7",
+                        "tertiary-container": "#cf8667",
+                        "inverse-primary": "#a9d1aa",
+                        "outline": "#727970",
+                        "on-tertiary-fixed-variant": "#6f371e",
+                        "secondary": "#486648",
+                        "on-secondary-fixed": "#052109",
+                        "surface-bright": "#fdf9f0",
+                        "on-primary-fixed": "#002109",
+                        "secondary-fixed": "#caecc6",
+                        "surface-container-highest": "#e6e2d9",
+                        "on-surface-variant": "#424841",
+                        "background": "#fdf9f0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "container-max": "1200px",
+                        "sm": "12px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Newsreader"],
+                        "h1": ["Newsreader"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "h2": ["Newsreader"],
+                        "button": ["Manrope"],
+                        "label-caps": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", { "lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500" }],
+                        "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h2": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(253, 249, 240, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(123, 161, 125, 0.2);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 40px -10px rgba(61, 90, 61, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- 1. Announcement Bar -->
+<div class="bg-primary text-on-primary py-xs px-gutter text-center flex flex-col sm:flex-row justify-center items-center gap-xs sm:gap-md z-50 relative">
+<p class="font-body-md text-sm sm:text-base">Solo 9,99 €/mes · Primer mes con 7 días gratis · Cancela cuando quieras</p>
+<button class="bg-tertiary-container hover:bg-tertiary text-on-tertiary font-button text-xs py-1 px-3 rounded-full transition-colors">Empezar gratis</button>
+</div>
+<!-- 2. Sticky Header (TopAppBar from JSON) -->
+<header class="bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md text-emerald-800 dark:text-emerald-400 font-['Newsreader'] text-lg font-medium text-2xl font-semibold italic text-emerald-900 dark:text-emerald-100 docked full-width top-0 sticky z-50 border-b border-emerald-900/10 dark:border-emerald-100/10 shadow-sm shadow-emerald-900/5">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<a class="text-2xl font-semibold italic text-emerald-900 dark:text-emerald-100 font-h2" href="index.html">NutriSana</a>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors duration-300 font-body-md" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors duration-300 font-body-md" href="como-funciona.html">Cómo Funciona</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors duration-300 font-body-md" href="mi-dia.html">Herramientas</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors duration-300 font-body-md" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors duration-300 font-body-md" href="#faq">FAQ</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block font-button text-primary hover:text-primary-fixed-variant transition-colors">Iniciar sesión</button>
+<button class="bg-tertiary-container hover:bg-tertiary text-on-tertiary font-button py-2 px-4 rounded-full transition-colors scale-95 transition-transform duration-200">Empezar Ahora</button>
+</div>
+</div>
+</header>
+<!-- 3. Hero Section -->
+<section class="relative pt-xl pb-xl px-gutter max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-lg">
+<div class="lg:w-1/2 flex flex-col gap-md z-10">
+<h1 class="font-h1 text-h1 text-primary">Tu nutricionista digital por menos de un café al mes</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                NutriSana es la primera app que adapta tus macros y recetas en tiempo real si cambias de planes. Empezamos conociéndote a fondo.
+            </p>
+<div class="flex flex-col sm:flex-row gap-sm pt-4">
+<button class="bg-tertiary-container hover:bg-tertiary text-on-tertiary font-button py-3 px-6 rounded-full transition-colors shadow-lg shadow-tertiary/20">Empezar gratis 7 días</button>
+<button class="bg-transparent border border-primary-container text-primary font-button py-3 px-6 rounded-full hover:bg-surface-variant transition-colors">Ver cómo funciona</button>
+</div>
+<div class="mt-8 flex items-center gap-sm">
+<div class="flex -space-x-3">
+<img alt="Usuario" class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="close-up portrait of a smiling young woman with dark hair in warm natural sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ-TKdXynmIauqOR-ipRX7R0pU6dLayq2aPTdeO721nbN7tfylbEjeG0nWoVzgAUwMv0BbTuMio_R9thYYy1JjHlUt4yRwOIBQloiPjdI7dQwrr4TTN7_7IYl9GpTtB1_eQddrteBPyK_B3MnHlHO0Aw2SW6_lbYK_GgDurQnpMWGFh7ppq63Fr2eOpNnCNtwUKNH90_zkjotIb9vlUbz9YlKz5PWO1tH51bedtB6yGUKzE9T_Un9vaKl0EcgS1fvLPToyD2bc5y4"/>
+<img alt="Usuario" class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="close-up portrait of a confident man with a short beard in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsyQA76LeOJeY4o1yjzbIPZUkBlBRUxNgKSEiZuarXcEZMK-QNDg0uFXhshY6K8H_ciS-utgafXO46bNEAw6uBy1AR_X3Niabxen_ThUPlF8mC0eXHHe6qrsCAiej96Ic4Q7VuqQOe2rB3xcOGAe364zlTj7PWhXqfZmzFW11wkL48JNnJcEuSBrb40UNJSuSTC0vDGsSJ_r_JYqPlAZh-Q4x7oK_MWst9vTpr9oZrm1AHcaFT9w_1Lc1SIkdBrc77iHqaJc360Xc"/>
+<img alt="Usuario" class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="close-up portrait of a smiling woman with blonde hair looking directly at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxyV-tdPnYnHAOkdHfth1vNy1rLt2izapfGFSbKIWOBhFrAuJZs9LIp142r16bczSGAb_lkCHBx_b-sLL_3nx9CCx6j_m-mRcxF1V6ZI6MwE-v_XxNUPRAYHpYUbC4tnGraAb4i0jumfA6Id6z2xZkctmHpsAW2uo48nVK_mezWAPX877bxNSJJYvrblT3ThUvZZ75an2LItYbo2Fv2qjgtQn6dtbOPXydnOlK9Udk8U-PG2PQRrWy-xbSMav4nuoJHFZRiacnA-E"/>
+</div>
+<div class="flex flex-col">
+<div class="flex text-tertiary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">+12.400 vidas cambiadas</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 relative w-full max-w-md mx-auto">
+<!-- Decorative background elements -->
+<div class="absolute inset-0 bg-secondary-container rounded-full blur-3xl opacity-30 -z-10 transform translate-x-10 translate-y-10"></div>
+<div class="relative bg-surface rounded-[40px] border-[8px] border-surface-variant soft-shadow overflow-hidden h-[600px] w-full max-w-[300px] mx-auto flex flex-col">
+<!-- App Mockup Header -->
+<div class="bg-primary text-on-primary p-4 rounded-b-xl mb-4">
+<h3 class="font-h3 text-lg mb-1">Miércoles, 24 Oct</h3>
+<p class="font-body-md text-sm opacity-80">1,850 kcal · 120g Proteína</p>
+</div>
+<!-- App Mockup Content -->
+<div class="px-4 flex-1 flex flex-col gap-4 overflow-hidden relative">
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex-shrink-0 overflow-hidden">
+<img alt="Desayuno" class="w-full h-full object-cover" data-alt="close up of a healthy breakfast bowl with yogurt fresh berries and granola on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB68Ko4blX9iyK6lEgpfkV35TZvXRTdQ_FpIwCsULbLhi3bKckBZ_qOoK8tJzu-dtUk-dpIbGjyPWG5TFj032-HtNAnzyUO7pNW9QBTfNfZuQRADsqj5s3v6LyLvPejIyp3q5tkzKFIBf9wxyVUlo5ax-ZcKH8UCa46CkCZhGCuHrFycED7-2za94E4c1JbyHypegxvaLAx72PdZhX7wNuUfEygy13sSjNWDGpUJs8GnW2AyCh6kmDTLj4tPQD1x2oLnW1N3Ug6ruw"/>
+</div>
+<div class="flex-1">
+<h4 class="font-button text-sm">Bowl de Avena</h4>
+<p class="font-body-md text-xs text-on-surface-variant">350 kcal</p>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant flex items-center gap-3 relative overflow-hidden">
+<div class="absolute inset-0 bg-tertiary-fixed-dim/10 pointer-events-none"></div>
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex-shrink-0 overflow-hidden">
+<img alt="Comida" class="w-full h-full object-cover" data-alt="overhead shot of a vibrant colorful salad with mixed greens quinoa and roasted vegetables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuVrWAHxwQs7kzB2mH3vBduVeXDUBH9Ih3VotvAlcw2IaJ0ksf-MxllatjwJWHBOv6w9bRGB-m3RdZuxVnShVCYVX0Xfgo6lOstS0-CnGRbxr7Heu3haSaQu8gbS6ctbDVUtBso1k_4vy7D41U0GLyydwRyiWApQuL2YxgIxgjaJ3Y8qVXt9Dg25q8Df35dDTwYEcfahH5O_G9pDtCaUfGGWIF4J9siWCJhyaBjMGO456nTU43FjoXAH1SgE5YQsndU2_L8tCjJ7I"/>
+</div>
+<div class="flex-1">
+<h4 class="font-button text-sm">Ensalada de Quinoa</h4>
+<p class="font-body-md text-xs text-on-surface-variant">520 kcal</p>
+</div>
+<button class="bg-tertiary-container text-on-tertiary font-button text-[10px] py-1 px-2 rounded-lg shrink-0">Cambiar comida</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 21. Footer (From JSON) -->
+<footer class="bg-stone-100 dark:bg-stone-900 text-emerald-900 dark:text-emerald-100 font-['Newsreader'] text-sm text-xl font-bold text-emerald-800 dark:text-emerald-200 w-full py-12 px-6 mt-20 border-t border-emerald-900/5 flat no shadows opacity-80 hover:opacity-100 transition-opacity">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col gap-4">
+<a class="font-h2 text-primary font-bold" href="index.html">NutriSana</a>
+<p class="font-body-md text-stone-500">© 2024 NutriSana Wellness. Inspiración mediterránea para una vida saludable.</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-stone-500 hover:underline decoration-emerald-500/30" href="#">Privacidad</a>
+<a class="font-body-md text-stone-500 hover:underline decoration-emerald-500/30" href="#">Cookies</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-stone-500 hover:underline decoration-emerald-500/30" href="#">Términos</a>
+<a class="font-body-md text-stone-500 hover:underline decoration-emerald-500/30" href="#">Contacto</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-stone-500 hover:underline decoration-emerald-500/30" href="#">Prensa</a>
+</div>
+</div>
+</footer>
+</body></html>

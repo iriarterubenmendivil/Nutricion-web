@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriSana - Mi Día</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#052109",
+                        "surface-container-low": "#f7f3ea",
+                        "inverse-primary": "#a9d1aa",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f2ede4",
+                        "surface-dim": "#dedad1",
+                        "on-tertiary-fixed-variant": "#6f371e",
+                        "tertiary": "#8c4e33",
+                        "inverse-on-surface": "#f5f0e7",
+                        "background": "#fdf9f0",
+                        "on-primary-fixed": "#002109",
+                        "secondary": "#486648",
+                        "primary-container": "#7ba17d",
+                        "tertiary-fixed": "#ffdbcd",
+                        "outline": "#727970",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#ece8df",
+                        "primary-fixed-dim": "#a9d1aa",
+                        "secondary-fixed-dim": "#aecfab",
+                        "on-primary-fixed-variant": "#2c4e31",
+                        "surface-variant": "#e6e2d9",
+                        "secondary-fixed": "#caecc6",
+                        "on-secondary-container": "#4c6a4c",
+                        "surface-bright": "#fdf9f0",
+                        "on-primary-container": "#14371b",
+                        "surface-container-highest": "#e6e2d9",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#32302a",
+                        "on-tertiary-container": "#53220a",
+                        "primary": "#436747",
+                        "on-secondary-fixed-variant": "#314d31",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1c16",
+                        "on-surface": "#1c1c16",
+                        "tertiary-container": "#cf8667",
+                        "primary-fixed": "#c4edc5",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-surface-variant": "#424841",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#436747",
+                        "outline-variant": "#c2c8bf",
+                        "secondary-container": "#c7e9c3",
+                        "on-error-container": "#93000a",
+                        "surface": "#fdf9f0",
+                        "tertiary-fixed-dim": "#ffb597"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "h1": ["Newsreader"],
+                        "button": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "h3": ["Newsreader"],
+                        "h2": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500" }],
+                        "h2": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex justify-center items-center py-md font-body-md text-body-md">
+<!-- App Container (Mobile Mockup) -->
+<div class="w-full max-w-[400px] h-[850px] bg-surface-bright rounded-xl overflow-hidden shadow-2xl relative flex flex-col border border-outline-variant/30">
+<!-- Top Header -->
+<header class="px-gutter pt-lg pb-md flex justify-between items-center bg-surface-container-lowest sticky top-0 z-10 border-b border-surface-variant/50">
+<div>
+<h1 class="font-h2 text-h2 text-primary">Mi Día</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Jueves, 24 de Octubre</p>
+</div>
+<button aria-label="Notifications" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Content Scrollable Area -->
+<main class="flex-1 overflow-y-auto pb-[100px]">
+<!-- Macros Bento Grid -->
+<section class="px-gutter py-md">
+<div class="grid grid-cols-2 gap-sm">
+<!-- Main Calories Ring -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-variant/40 flex items-center justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">CALORÍAS</p>
+<div class="flex items-end gap-xs">
+<span class="font-h2 text-h2 text-primary">1,450</span>
+<span class="font-body-md text-body-md text-on-surface-variant pb-1">/ 2,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">550 restantes</p>
+</div>
+<div class="relative w-24 h-24">
+<!-- SVG Ring -->
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary-container" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+</div>
+<!-- Protein -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-surface-variant/40">
+<div class="flex justify-between items-center mb-base">
+<p class="font-label-caps text-label-caps text-on-surface-variant">PROTEÍNA</p>
+<span class="material-symbols-outlined text-tertiary-container text-xl" style="font-variation-settings: 'FILL' 1;">egg_alt</span>
+</div>
+<p class="font-h3 text-h3 text-on-surface">65g <span class="font-body-md text-body-md text-on-surface-variant">/ 120g</span></p>
+<div class="w-full h-2 bg-surface-variant rounded-full mt-sm overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 54%"></div>
+</div>
+</div>
+<!-- Carbs -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-sm border border-surface-variant/40">
+<div class="flex justify-between items-center mb-base">
+<p class="font-label-caps text-label-caps text-on-surface-variant">CARBOS</p>
+<span class="material-symbols-outlined text-[#F4B942] text-xl" style="font-variation-settings: 'FILL' 1;">bakery_dining</span>
+</div>
+<p class="font-h3 text-h3 text-on-surface">110g <span class="font-body-md text-body-md text-on-surface-variant">/ 200g</span></p>
+<div class="w-full h-2 bg-surface-variant rounded-full mt-sm overflow-hidden">
+<div class="h-full bg-[#F4B942] rounded-full" style="width: 55%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meals List -->
+<section class="px-gutter pb-xl">
+<h2 class="font-h3 text-h3 text-on-surface mb-md">Comidas de hoy</h2>
+<div class="flex flex-col gap-md">
+<!-- Desayuno -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant/40 group">
+<div class="h-32 w-full relative">
+<img alt="Desayuno nutritivo" class="w-full h-full object-cover" data-alt="close-up of avocado toast on artisan sourdough bread with poached egg, cherry tomatoes and microgreens, bright natural morning light, healthy rustic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRUQuQRXv-18yRVEPcf5b_J0MI8f3FMuNH-gRu9qArCae0dbjlp41qLZfJHJL8VQ070wshc94lfpMrNXn0hNRtpWlTQCWADVxpdxLznOonQMoyjcRFpn8JImd3vrMu79UG42ygO4An7R_ezydpzNP3CV1-SGfVvFESqlfPSW1yMnfHzCfBdXJ_wiVqPAdhCe38j30hbdCAun3EMTxkTph9Na4T8SYM-BzJ4eJ4go9E6uMiEm2nDDaTvgxF0z-O7PNXq-LLxt9KN0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-sm text-white">
+<h3 class="font-h3 text-h3">Desayuno</h3>
+<p class="font-body-md text-body-md opacity-90">320 kcal</p>
+</div>
+</div>
+<div class="p-sm flex justify-between items-center">
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Tostada de Aguacate y Huevo</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Proteína: 15g • Preparación: 10 min</p>
+</div>
+<button aria-label="Cambiar comida" class="w-10 h-10 rounded-full flex items-center justify-center text-tertiary-container hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">swap_horiz</span>
+</button>
+</div>
+</div>
+<!-- Almuerzo -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant/40 group">
+<div class="h-32 w-full relative">
+<img alt="Almuerzo saludable" class="w-full h-full object-cover" data-alt="vibrant mediterranean salad bowl with grilled chicken, quinoa, kalamata olives, feta cheese, and fresh greens, realistic macro food photography, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6V4crFo0R4cEHEJU0k86SDkmfNNcemk1noRb4oPtSfy622e3AyegGz2LRmoKiq0A0B81QsI-H-Jxizll_1syarYAlaDJf-KoL8pwjMjSkqpNRu25wSjK_z-S6kuR8qHbFMYyVNUYiDJ5_D4Ez7ax2V-IsUeOC2acj40xbn-LkkgdY4CZKEvV9JpcO7KTIZt2Xtyo2F_j6N-Y40x40dShwvKLMxfXSzbWHG3AKwHSHr58GCgRmkhGG3ti4zhHc09XgGsOpwYybDm0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-sm text-white">
+<h3 class="font-h3 text-h3">Almuerzo</h3>
+<p class="font-body-md text-body-md opacity-90">540 kcal</p>
+</div>
+</div>
+<div class="p-sm flex justify-between items-center">
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Bowl Mediterráneo con Pollo</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Proteína: 35g • Preparación: 25 min</p>
+</div>
+<button aria-label="Cambiar comida" class="w-10 h-10 rounded-full flex items-center justify-center text-tertiary-container hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">swap_horiz</span>
+</button>
+</div>
+</div>
+<!-- Cena -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant/40 group">
+<div class="h-32 w-full relative opacity-70 grayscale-[30%]">
+<img alt="Cena ligera" class="w-full h-full object-cover" data-alt="close up of grilled salmon fillet with steamed asparagus and lemon wedge on white ceramic plate, soft diffused evening light, elegant minimal plating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWjga_SoPWJEEZL_0XBzQGkPoaHEPm83NSZsMpbHW89GePTdLXFpZdIEyd0Ps0Ke8ra2CjoUkRwhEr7XBGu4ubJNSbfxVecFxTyDhUYANqxg1onAL4wBs7kfahCTZtfNVkW-PTvcREczBXUD86pq83ZODbBdsogsZS9_xhLdU-8BBZh2huHWOu93T0NzgcotcO4KmJJRBljM1j_e2JKFMB_NkSidCu7M7Y9cfM7tlpu8IvjYhjCViiS9yyygpQc3SIt42lvHjK1Ts"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-sm text-white">
+<h3 class="font-h3 text-h3">Cena</h3>
+<p class="font-body-md text-body-md opacity-90">410 kcal</p>
+</div>
+</div>
+<div class="p-sm flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Salmón al Horno con Espárragos</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Proteína: 30g • Preparación: 30 min</p>
+</div>
+</div>
+<!-- Prominent Change Button for Dinner -->
+<button class="w-full py-sm bg-tertiary-container text-white font-button text-button rounded-lg flex justify-center items-center gap-base hover:bg-tertiary transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">swap_horiz</span>
+                                Cambiar comida
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Sidebar conceptually mapped to bottom for mobile) -->
+<nav class="absolute bottom-0 w-full bg-surface-container-lowest border-t border-surface-variant flex justify-around items-center h-[80px] px-sm pb-sm pt-xs z-50">
+<!-- Plan (Active) -->
+<button class="flex flex-col items-center justify-center gap-xs w-16 h-full text-primary">
+<div class="w-14 h-8 rounded-full bg-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</div>
+<span class="font-label-caps text-[10px] font-bold">Plan</span>
+</button>
+<!-- Recipes -->
+<button class="flex flex-col items-center justify-center gap-xs w-16 h-full text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+<span class="font-label-caps text-[10px] font-bold">Recetas</span>
+</button>
+<!-- Progress -->
+<button class="flex flex-col items-center justify-center gap-xs w-16 h-full text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">monitoring</span>
+<span class="font-label-caps text-[10px] font-bold">Progreso</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center gap-xs w-16 h-full text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-caps text-[10px] font-bold">Perfil</span>
+</button>
+</nav>
+</div>
+</body></html>
